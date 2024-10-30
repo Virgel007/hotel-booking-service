@@ -1,6 +1,6 @@
 package com.example.hotel_booking_service.service;
 
-import com.example.hotel_booking_service.dto.HotelResponse;
+import com.example.hotel_booking_service.web.response.HotelResponse;
 import com.example.hotel_booking_service.model.HotelEntity;
 
 import java.util.List;

@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = HotelMapper.class)
+@Mapper(componentModel = "spring", uses = {HotelMapper.class})
 public interface HotelListMapper {
 
     List<HotelEntity> toHotelList(List<HotelDto> hotelDtoList);

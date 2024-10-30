@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -31,4 +34,7 @@ public class HotelEntity {
 
     @Column(name = "rating")
     private Double rating;
+
+    @OneToMany(mappedBy = "hotelEntity", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<RoomEntity> rooms;
 }

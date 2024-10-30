@@ -1,7 +1,7 @@
-package com.example.hotel_booking_service.controller;
+package com.example.hotel_booking_service.web.controller;
 
 import com.example.hotel_booking_service.dto.HotelDto;
-import com.example.hotel_booking_service.dto.HotelResponse;
+import com.example.hotel_booking_service.web.response.HotelResponse;
 import com.example.hotel_booking_service.mapping.HotelMapper;
 import com.example.hotel_booking_service.service.HotelService;
 import lombok.RequiredArgsConstructor;
@@ -26,12 +26,12 @@ public class HotelController {
 
     @PostMapping
     public ResponseEntity<HotelResponse> createHotel(@RequestBody HotelDto hotelDto) {
-        return ResponseEntity.ok(hotelService.createHotel(hotelMapper.hotelDtoToHotel(hotelDto)));
+        return ResponseEntity.ok(hotelService.createHotel(hotelMapper.hotelDtoToHotelEntity(hotelDto)));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<HotelResponse> updateHotel(@RequestBody HotelDto hotelDto, @PathVariable Long id) {
-        return ResponseEntity.ok(hotelService.updateHotel(hotelMapper.hotelDtoToHotel(hotelDto), id));
+        return ResponseEntity.ok(hotelService.updateHotel(hotelMapper.hotelDtoToHotelEntity(hotelDto), id));
     }
 
     @DeleteMapping("/{id}")
